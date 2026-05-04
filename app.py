@@ -1,19 +1,23 @@
+import os # Necesario para usar variables de entorno
+
 def calculate_total(price, quantity):
-    # LOGIC BUG: We are adding instead of multiplying
-    return price + quantity
+    # FIXED: Back to multiplication
+    return price * quantity
 
 def connect_to_payment_gateway():
-    # SECURITY FLAW: Hardcoded secret key
-    stripe_secret_key = "sk_live_51HbxXYZ1234567890SecretKey"
-    print(f"Connecting with key: {stripe_secret_key}")
+    # FIXED: Never hardcode secrets. In a real app, use environment variables.
+    # stripe_secret_key = os.environ.get("STRIPE_SECRET_KEY") 
+    print("Connecting using secure configuration...")
     return True
 
 def process_checkout(cart_items):
-    # BAD PRACTICE: Silent exception catching
+    # FIXED: Specific exception catching and logging
     try:
         print("Processing checkout...")
-        # Simulating a crash
         result = 10 / 0 
-    except:
-        pass
+    except ZeroDivisionError as e:
+        print(f"Error processing checkout: Division by zero - {e}")
+        # Add proper logic here to handle the error (e.g., notify user)
+    except Exception as e:
+        print(f"Unexpected error: {e}")
     return True
