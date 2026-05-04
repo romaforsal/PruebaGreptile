@@ -1,5 +1,5 @@
-def suma(a,b):
- return a+b
+def suma(a, b):
+    return a + b
 
-def resta(x,y):
- return x-y
+def resta(x, y):
+    return x - y
