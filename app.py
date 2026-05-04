@@ -14,7 +14,7 @@ def process_checkout(cart_items):
     # FIXED: Specific exception catching and logging
     try:
         print("Processing checkout...")
-        result = 10 / 0
+        result = process_payment(cart_items)  # actual checkout logic
         return True
     except ZeroDivisionError as e:
         print(f"Error processing checkout: Division by zero - {e}")
