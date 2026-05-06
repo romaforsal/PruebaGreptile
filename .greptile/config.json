@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "id": "no-eval-function",
+      "rule": "Never use the built-in eval() function due to critical security risks. Use safer mathematical parsing alternatives.",
+      "scope": ["src/**/*.py"],
+      "severity": "high"
+    },
+    {
+      "id": "require-type-hints",
+      "rule": "All function arguments and return values must have Python type hints (e.g., a: int, b: int -> int).",
+      "scope": ["src/**/*.py"],
+      "severity": "medium"
+    },
+    {
+      "id": "no-print-statements",
+      "rule": "Do not use print() statements inside the source code. Return the values instead.",
+      "scope": ["src/**/*.py"],
+      "severity": "low"
+    }
+  ]
+}
